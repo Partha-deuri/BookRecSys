@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Book Recommender</title>
+
+        <!-- Tailwind CSS (CDN) -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <style>
+            :root {
+                --card-bg: rgba(255, 255, 255, 0.8);
+            }
+            body {
+                font-family: "Inter", system-ui, -apple-system, "Segoe UI",
+                    Roboto, "Helvetica Neue", Arial;
+            }
+            /* small custom tweaks for card images and shadows */
+            .book-card img {
+                height: 220px;
+                width: 100%;
+                object-fit: cover;
+                display: block;
+            }
+            .glass {
+                background: linear-gradient(
+                    180deg,
+                    rgba(255, 255, 255, 0.65) 0%,
+                    rgba(255, 255, 255, 0.55) 100%
+                );
+                backdrop-filter: blur(6px);
+            }
+        </style>
+    </head>
+    <body
+        class="bg-gradient-to-b from-slate-50 to-indigo-50 min-h-screen text-slate-800"
+    >
+        <div class="max-w-7xl mx-auto px-6 py-12">
+            <header class="mb-10">
+                <div class="flex items-center justify-between gap-6">
+                    <div>
+                        <h1
+                            class="text-4xl md:text-5xl font-extrabold text-indigo-700 leading-tight"
+                        >
+                            Book Recommender
+                        </h1>
+                        <p class="mt-2 text-slate-600">
+                            Discover your next favorite book — curated
+                            recommendations and popular picks.
+                        </p>
+                    </div>
+
+                    <div class="w-full max-w-sm">
+                        <label for="search" class="sr-only">Search books</label>
+                        <div class="relative">
+                            <input
+                                id="search"
+                                type="search"
+                                placeholder="Search title or author..."
+                                class="w-full rounded-full pl-4 pr-12 py-2 border border-slate-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                            />
+                            <button
+                                id="searchBtn"
+                                class="absolute right-1 top-1/2 -translate-y-1/2 bg-indigo-600 text-white px-4 py-1.5 rounded-full text-sm hover:bg-indigo-700"
+                            >
+                                Search
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Add logout button -->
+                    <button
+                        id="btn-logout"
+                        class="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    >
+                        Logout
+                    </button>
+                </div>
+
+                <div
+                    class="mt-6 flex items-center gap-3 text-sm text-slate-500"
+                >
+                    <span
+                        class="inline-flex items-center gap-2 bg-white/60 px-3 py-1 rounded-full glass shadow-sm"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-4 w-4 text-indigo-500"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M5 7V5a2 2 0 012-2h10a2 2 0 012 2v2"
+                            />
+                        </svg>
+                        <span>Explore popular books and top authors</span>
+                    </span>
+                </div>
+            </header>
+
+            <section id="user-recommendations-section" class="mb-12 hidden">
+                <h2 class="text-2xl font-semibold mb-4 text-indigo-700">
+                    Recommended For You
+                </h2>
+                <div
+                    id="user-recommendations-grid"
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6"
+                >
+                    <div class="col-span-full py-8 text-center text-slate-500">
+                        Loading your recommendations...
+                    </div>
+                </div>
+            </section>
+
+            <!-- Top Books -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-semibold mb-4 text-indigo-700">
+                    All-Time Popular Books
+                </h2>
+                <div
+                    id="top-books-grid"
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6"
+                >
+                    <div class="col-span-full py-8 text-center text-slate-500">
+                        Loading popular books...
+                    </div>
+                </div>
+            </section>
+
+            <!-- Top Authors -->
+            <section>
+                <h2 class="text-2xl font-semibold mb-4 text-indigo-700">
+                    Top Authors
+                </h2>
+                <div
+                    id="top-authors-grid"
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6"
+                >
+                    <div class="col-span-full py-6 text-center text-slate-500">
+                        Loading top authors...
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script src="func.js"></script>
+    </body>
+</html>

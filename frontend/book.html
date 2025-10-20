@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details — Book Recommender</title>
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root { --card-bg: rgba(255,255,255,0.9); }
+        body { font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-slate-50 to-indigo-50 min-h-screen text-slate-800">
+
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <header class="mb-8">
+            <div class="flex items-center justify-between">
+                <div>
+                    <a href="home.html" class="inline-flex items-center gap-2 text-indigo-600 hover:underline">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                        Back to Home
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <h1 class="text-2xl font-semibold text-indigo-700">Book Recommender</h1>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Book Details Section -->
+        <main id="book-details-content" class="bg-white p-8 rounded-xl shadow-md mb-12">
+            <p class="text-gray-500">Loading book details...</p>
+        </main>
+
+        <!-- Recommendations Section -->
+        <section id="recommendations-section" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-6 text-indigo-700">You Might Also Like</h2>
+            <div id="recommendations-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                <div class="col-span-full py-6 text-center text-slate-500">Loading recommendations...</div>
+            </div>
+        </section>
+    </div>
+
+    <script src="func.js"></script>
+</body>
+</html>
+

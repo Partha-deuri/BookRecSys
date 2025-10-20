@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Welcome — Book Recommender</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style> body { font-family: 'Inter', sans-serif; } </style>
+</head>
+<body class="bg-gradient-to-b from-slate-50 to-indigo-100 min-h-screen flex items-center justify-center">
+
+    <div class="text-center bg-white/60 backdrop-blur-md p-10 rounded-2xl shadow-lg max-w-lg mx-auto">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-indigo-700">Welcome to the Book Recommender</h1>
+        <p class="mt-4 text-slate-600">Please select an option to continue.</p>
+
+        <div class="mt-8 space-y-4">
+            <button id="btn-returning-user" class="w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors">Returning User</button>
+            <button id="btn-new-user" class="w-full bg-slate-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-slate-600 transition-colors">Register New User</button>
+            <button id="btn-guest" class="w-full bg-white text-slate-700 font-bold py-3 px-6 rounded-lg hover:bg-slate-100 border border-slate-300 transition-colors">Continue as a Guest</button>
+        </div>
+
+        <div id="returning-user-form" class="hidden mt-6">
+            <input type="text" id="user-id-input" placeholder="Enter your User ID (e.g., 254)" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <button id="btn-submit-userid" class="w-full mt-2 bg-green-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-700 transition-colors">Get Recommendations</button>
+        </div>
+    </div>
+
+    <script src="func.js"></script> 
+</body>
+</html>
