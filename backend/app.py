@@ -7,7 +7,7 @@ from flask_cors import CORS  # 1. Import CORS
 # --- Initialize the Flask App ---
 app = Flask(__name__)
 CORS(app)  # 2. Enable CORS for all routes
-model_path = 'v3-g/backend/models/'
+model_path = './models/'
 
 # --- Load All Model Artifacts ---
 books_df = pickle.load(open(f'{model_path}books.pkl', 'rb'))
