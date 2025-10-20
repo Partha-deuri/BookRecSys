@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 from flask import Flask, jsonify
 from flask_cors import CORS
+from sklearn.metrics.pairwise import cosine_similarity
 
 app = Flask(__name__)
 CORS(app)
@@ -38,7 +39,13 @@ def recommend_similar(book_identifier):
 
     try:
         index = np.where(pivot_table.index == book_title)[0][0]
-        similar_items = sorted(list(enumerate(similarity_scores[index])), key=lambda x: x[1], reverse=True)[1:6]
+
+        # Calculate similarity for ONLY this one book
+        book_vector = pivot_table.iloc[index].values.reshape(1, -1)
+        scores = cosine_similarity(book_vector, pivot_table.values)[0]  # 1D array of scores
+
+        # Now find the top 5 similar items (skip the book itself)
+        similar_items = sorted(list(enumerate(scores)), key=lambda x: x[1], reverse=True)[1:6]
         recommended_titles = [pivot_table.index[i[0]] for i in similar_items]
         recommendations = get_book_details_by_title(recommended_titles)
 
