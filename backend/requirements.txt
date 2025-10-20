@@ -1,0 +1,11 @@
+# === Core Python Libraries ===
+numpy
+pandas
+
+# === Machine Learning & Similarity Computation ===
+scikit-learn
+scipy
+
+# === Backend / API Framework ===
+Flask
+Flask-Cors
