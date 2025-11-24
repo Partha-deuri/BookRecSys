@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiUrl = 'https://bookrecsys-dneq.onrender.com';
+    // const apiUrl = 'https://bookrecsys-dneq.onrender.com';
+    const apiUrl = 'http://localhost:5000/';
 
     // Inline SVG placeholder for book covers
     const _svg = `<svg xmlns='http://www.w3.org/2000/svg' width='300' height='440' viewBox='0 0 300 440' preserveAspectRatio='none'>
